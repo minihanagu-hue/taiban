@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>「食在排灣・深根台坂」老品種小米保種與長輩綠色共耕計畫 - 方案展示圖卡</title>
+  <style>
+    :root {
+      --primary: #b45309; /* 小米金黃/深橘 */
+      --secondary: #059669; /* 田園翠綠 */
+      --accent: #be123c; /* 警示紅/熱情紅 */
+      --slate-dark: #0f172a;
+      --slate-light: #f8fafc;
+      --border: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Microsoft JhengHei", sans-serif; }
+    body { background: #f1f5f9; color: #1e293b; padding: 12px; display: flex; justify-content: center; }
+
+    /* 方案卡片主容器 */
+    .showcase-card {
+      max-width: 800px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      overflow: hidden;
+      border: 1.5px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 頂部 Header */
+    .header-banner {
+      background: linear-gradient(135deg, #b45309 0%, #d97706 100%);
+      color: white;
+      padding: 24px 20px;
+      position: relative;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .header-banner h1 { font-size: 1.6rem; font-weight: 900; line-height: 1.35; margin-bottom: 6px; }
+    .header-banner p { font-size: 0.95rem; opacity: 0.95; }
+
+    /* 編輯提示 */
+    .edit-hint {
+      background: #fffbeb;
+      color: #b45309;
+      font-size: 0.8rem;
+      padding: 6px 20px;
+      border-bottom: 1px solid #fde68a;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* 基本資訊/名牌 */
+    .meta-bar {
+      background: #fffbeb;
+      border-bottom: 1px dashed #fde68a;
+      padding: 12px 20px;
+      font-size: 0.9rem;
+    }
+    .meta-bar div { margin-bottom: 4px; }
+    .meta-bar div:last-child { margin-bottom: 0; }
+    .meta-label { font-weight: bold; color: var(--primary); }
+
+    /* 單元區塊 */
+    .section-box { padding: 20px; border-bottom: 1px solid #f1f5f9; }
+    .section-box:last-of-type { border-bottom: none; }
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--slate-dark);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* 痛點卡片 */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 580px) { .grid-2 { grid-template-columns: 1fr; } }
+    .pain-card {
+      padding: 14px 16px;
+      border-radius: 10px;
+      border-left: 4px solid var(--accent);
+      background: #fff5f5;
+    }
+    .pain-card.c-secondary { border-left-color: var(--secondary); background: #ecfdf5; }
+    .pain-card h4 { font-size: 0.95rem; margin-bottom: 4px; color: #0f172a; }
+    .pain-card p { font-size: 0.88rem; color: #475569; line-height: 1.45; }
+
+    /* 三大步驟 */
+    .steps-list { display: flex; flex-direction: column; gap: 12px; }
+    .step-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px;
+      display: flex;
+      gap: 12px;
+    }
+    .step-num {
+      background: var(--slate-dark);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 900;
+      padding: 2px 6px;
+      border-radius: 4px;
+      align-self: flex-start;
+      margin-top: 2px;
+    }
+    .step-content { flex: 1; }
+    .step-content h4 { font-size: 0.95rem; margin-bottom: 4px; color: #0f172a; }
+    .step-content p { font-size: 0.88rem; color: #475569; line-height: 1.4; }
+
+    /* 4大闖關亮點 */
+    .highlights-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 12px; }
+    @media (max-width: 500px) { .highlights-grid { grid-template-columns: 1fr 1fr; } }
+    .quest-tag {
+      background: #f0fdf4;
+      border: 1.5px dashed #86efac;
+      padding: 8px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .quest-tag .icon { font-size: 1.2rem; margin-bottom: 2px; }
+    .quest-tag .title { font-size: 0.8rem; font-weight: bold; color: #166534; }
+    .quest-tag .desc { font-size: 0.7rem; color: #64748b; }
+
+    /* 成果展共食框 */
+    .共食大框 {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      color: #1e3a8a;
+      line-height: 1.4;
+    }
+
+    /* 經費配置 */
+    .budget-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    .budget-table th, .budget-table td { border-bottom: 1px solid #e2e8f0; padding: 8px; font-size: 0.88rem; text-align: left; }
+    .budget-table th { color: var(--slate-muted); font-weight: 600; background: #f8fafc; }
+    .budget-total { font-size: 1rem; font-weight: bold; color: var(--primary); background: #fffbeb; }
+
+    /* 效益統計區 */
+    .impact-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 8px; text-align: center; }
+    .impact-box { background: #f0fdf4; border: 1px solid #bbf7d0; padding: 10px 4px; border-radius: 8px; }
+    .impact-box .val { font-size: 1.3rem; font-weight: 900; color: var(--secondary); }
+    .impact-box .lbl { font-size: 0.75rem; color: #475569; }
+
+    /* 按鈕與頁尾 */
+    .action-bar {
+      background: #0f172a;
+      padding: 15px;
+      display: flex;
+      gap: 10px;
+    }
+    .btn {
+      flex: 1;
+      padding: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: opacity 0.15s;
+    }
+    .btn-primary { background: #eab308; color: #0f172a; }
+    .btn-secondary { background: #334155; color: white; }
+    .btn:active { opacity: 0.85; }
+
+    /* 套用打字編輯狀態的發亮框 */
+    [contenteditable="true"]:focus {
+      outline: 2px solid #3b82f6;
+      background: #f0f9ff !important;
+      border-radius: 4px;
+    }
+
+    /* 列印特定設定（A3/ A4 橫式） */
+    @media print {
+      body { background: white; padding: 0; }
+      .showcase-card { box-shadow: none; border: none; max-width: 100%; }
+      .action-bar, .edit-hint { display: none; }
+      .section-box { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="showcase-card">
+    <!-- 頂部 Header -->
+    <div class="header-banner">
+      <span class="badge">達仁鄉台坂部落｜公民審議提案競賽</span>
+      <h1 contenteditable="true" id="proj_title">🌾「食在排灣・深根台坂」</h1>
+      <p contenteditable="true" id="proj_sub">老品種小米保種・長輩綠色照顧共耕・野菜生活節成果展</p>
+    </div>
+
+    <!-- 編輯提示 -->
+    <div class="edit-hint">
+      ✍️ <b>桌長與夥伴提示：</b>點選下方任何文字，皆可直接在手機/平板上進行修改，網頁將會自動為您存檔。
+    </div>
+
+    <!-- 基本資訊與名牌 -->
+    <div class="meta-bar">
+      <div><span class="meta-label">申請單位：</span><span contenteditable="true" id="meta_team">第 3 桌（食在排灣組）</span></div>
+      <div><span class="meta-label">桌次成員：</span><span contenteditable="true" id="meta_members">桌長：高雁婷 ｜ 成員：洪錦祥、王萍、郭雅貞、王瀚傑</span></div>
+      <div><span class="meta-label">計畫總額：</span><span contenteditable="true" id="meta_budget">新台幣 100,000 元整（預算上限）</span></div>
+    </div>
+
+    <!-- 痛點 -->
+    <div class="section-box">
+      <div class="section-title">🔍 我們想解決的部落痛點</div>
+      <div class="grid-2">
+        <div class="pain-card">
+          <h4 contenteditable="true" id="pain1_t">🌾 味道在流失、土地在荒廢</h4>
+          <p contenteditable="true" id="pain1_d">外面阿粨多混粉或用進口米，失去台坂原生道地純味；部落閒置畸零地無人打理、雜草叢生，非常可惜。</p>
+        </div>
+        <div class="pain-card c-secondary">
+          <h4 contenteditable="true" id="pain2_t">👵 智慧在老人腦袋、年輕人不會種</h4>
+          <p contenteditable="true" id="pain2_d">長輩有豐富農事經驗但體力有限，年輕一代只會吃不會種。傳統小米保種工法與野菜知識面臨斷層危機。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 具體三大步驟 -->
+    <div class="section-box">
+      <div class="section-title">🚀 我們想怎麼做？行動三大步驟</div>
+      <div class="steps-list">
+        <!-- 步驟 1 -->
+        <div class="step-item">
+          <div class="step-num">STEP 1</div>
+          <div class="step-content">
+            <h4 contenteditable="true" id="step1_t">【尋寶扎根】部落土地與耆老智慧資源盤點</h4>
+            <p contenteditable="true" id="step1_d">會同幹部與青年盤點 2～3 處長輩安全的平整閒置地；拜訪與記錄 3～5 位熟知原生作物與老小米品系的耆老，建立台坂保種名冊與種籽庫。</p>
+          </div>
+        </div>
+        <!-- 步驟 2 -->
+        <div class="step-item">
+          <div class="step-num">STEP 2</div>
+          <div class="step-content">
+            <h4 contenteditable="true" id="step2_t">【青銀牽手】老幼跨世代分組傳統作物共耕</h4>
+            <p contenteditable="true" id="step2_d">成立 3 組混齡共耕隊（長老導師+青壯整地+學童體驗）。搭建友善高架植箱與菜園。青年與學童用影音、圖文記錄 vuvu 的農事手勢與土地故事。</p>
+          </div>
+        </div>
+        <!-- 步驟 3 -->
+        <div class="step-item">
+          <div class="step-num">STEP 3</div>
+          <div class="step-content">
+            <h4 contenteditable="true" id="step3_t">【綠色遊樂園】野菜生活節市集闖關與共食</h4>
+            <p contenteditable="true" id="step3_d">辦理成果市集與影像故事展。設計野菜盲摸聞香、小米保種配對、阿粨包折等文化闖關。現場柴燒煮食純小米阿粨、大鍋野菜湯百人共食。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 闖關高潮 -->
+    <div class="section-box">
+      <div class="section-title">🎪 成果展超吸睛：4大互動闖關遊戲</div>
+      <div class="highlights-grid">
+        <div class="quest-tag">
+          <div class="icon">🌿</div>
+          <div class="title" contenteditable="true" id="q1_t">1. 盲摸聞香</div>
+          <div class="desc" contenteditable="true" id="q1_d">閉眼辨識野菜<br>向 vuvu 學母語</div>
+        </div>
+        <div class="quest-tag">
+          <div class="icon">🌾</div>
+          <div class="title" contenteditable="true" id="q2_t">2. 種籽翻翻樂</div>
+          <div class="desc" contenteditable="true" id="q2_d">小米品種圖卡配對<br>認識原生留種特徵</div>
+        </div>
+        <div class="quest-tag">
+          <div class="icon">🍃</div>
+          <div class="title" contenteditable="true" id="q3_t">3. 手感大考驗</div>
+          <div class="desc" contenteditable="true" id="q3_d">傳統阿粨包折工序<br>挑戰動手綁結記號</div>
+        </div>
+        <div class="quest-tag">
+          <div class="icon">📸</div>
+          <div class="title" contenteditable="true" id="q4_t">4. 田邊打卡</div>
+          <div class="desc" contenteditable="true" id="q4_d">巡禮各組共耕微菜園<br>與故事成果牌拍照</div>
+        </div>
+      </div>
+      <div class="共食大框" contenteditable="true" id="culminate_desc">
+        🔥 <b>當天壓軸：</b>現場柴燒傳統大鍋蒸煮「全純小米、不混糯米粉」的部落阿粨，並熬煮熱騰騰的大鍋野菜排骨湯，全村百人共食慶收割！
+      </div>
+    </div>
+
+    <!-- 預算與效益數據 -->
+    <div class="section-box">
+      <div class="section-title">📊 10 萬元經費與預估效益（可隨時微調）</div>
+      <table class="budget-table">
+        <thead>
+          <tr>
+            <th>項目與用途說明</th>
+            <th style="width: 110px; text-align: right;">預估金額</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td contenteditable="true" id="b1_n">一、資源盤點、土地勘查與耆老田調普查</td>
+            <td style="text-align: right;">$<span contenteditable="true" id="b1_v">4,000</span></td>
+          </tr>
+          <tr>
+            <td contenteditable="true" id="b2_n">二、3組分組農資材（高架植箱、有機肥、工具與水管）</td>
+            <td style="text-align: right;">$<span contenteditable="true" id="b2_v">24,000</span></td>
+          </tr>
+          <tr>
+            <td contenteditable="true" id="b3_n">三、耆老與文化導師指導鐘點費（6場次共耕工作坊）</td>
+            <td style="text-align: right;">$<span contenteditable="true" id="b3_v">12,000</span></td>
+          </tr>
+          <tr>
+            <td contenteditable="true" id="b4_n">四、田間紀錄、成果展照片沖洗與圖文故事立牌輸出</td>
+            <td style="text-align: right;">$<span contenteditable="true" id="b4_v">6,000</span></td>
+          </tr>
+          <tr>
+            <td contenteditable="true" id="b5_n">五、成果市集、互動闖關道具與集章卡文宣印製</td>
+            <td style="text-align: right;">$<span contenteditable="true" id="b5_v">8,000</span></td>
+          </tr>
+          <tr>
+            <td contenteditable="true" id="b6_n">六、百人共食傳統阿粨食材費（全純小米、黑豬肉、月桃葉）</td>
+            <td style="text-align: right;">$<span contenteditable="true" id="b6_v">28,000</span></td>
+          </tr>
+          <tr>
+            <td contenteditable="true" id="b7_n">七、共煮大鍋野菜湯食材、柴火與活動環保餐具耗材</td>
+            <td style="text-align: right;">$<span contenteditable="true" id="b7_v">10,000</span></td>
+          </tr>
+          <tr>
+            <td contenteditable="true" id="b8_n">八、工作坊與活動當日志工平安保險費、茶水與行政雜支</td>
+            <td style="text-align: right;">$<span contenteditable="true" id="b8_v">8,000</span></td>
+          </tr>
+          <tr class="budget-total">
+            <td>經費總計：</td>
+            <td style="text-align: right;">$<span id="b_total">100,000</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 數據預估 -->
+      <div class="impact-row">
+        <div class="impact-box">
+          <div class="val" contenteditable="true" id="imp_p">80+ 人</div>
+          <div class="lbl">預估服務人數</div>
+        </div>
+        <div class="impact-box">
+          <div class="val" contenteditable="true" id="imp_t">350 人次</div>
+          <div class="lbl">預估服務人次</div>
+        </div>
+        <div class="impact-box">
+          <div class="val" contenteditable="true" id="imp_h">35 戶</div>
+          <div class="lbl">預估受惠戶數</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部操作列 -->
+    <div class="action-bar">
+      <button class="btn btn-primary" onclick="copyText()">📋 複製全案文字到 LINE</button>
+      <button class="btn btn-secondary" onclick="window.print()">🖨️ 列印 / 另存為 PDF</button>
+    </div>
+  </div>
+
+  <script>
+    // 監聽並自動計算總預算，同時自動儲存 LocalStorage
+    const bValueIds = ['b1_v', 'b2_v', 'b3_v', 'b4_v', 'b5_v', 'b6_v', 'b7_v', 'b8_v'];
+    const editableIds = [
+      'proj_title', 'proj_sub', 'meta_team', 'meta_members', 'meta_budget',
+      'pain1_t', 'pain1_d', 'pain2_t', 'pain2_d',
+      'step1_t', 'step1_d', 'step2_t', 'step2_d', 'step3_t', 'step3_d',
+      'q1_t', 'q1_d', 'q2_t', 'q2_d', 'q3_t', 'q3_d', 'q4_t', 'q4_d',
+      'culminate_desc', 'b1_n', 'b2_n', 'b3_n', 'b4_n', 'b5_n', 'b6_n', 'b7_n', 'b8_n',
+      'imp_p', 'imp_t', 'imp_h'
+    ].concat(bValueIds);
+
+    // 載入暫存
+    function loadSavedData() {
+      editableIds.forEach(id => {
+        const savedValue = localStorage.getItem('tb_proposal_' + id);
+        if (savedValue !== null) {
+          document.getElementById(id).innerText = savedValue;
+        }
+      });
+      calculateTotal();
+    }
+
+    // 計算總額並存檔
+    function calculateTotal() {
+      let total = 0;
+      bValueIds.forEach(id => {
+        const valStr = document.getElementById(id).innerText.replace(/,/g, '');
+        const val = parseInt(valStr) || 0;
+        total += val;
+      });
+      document.getElementById('b_total').innerText = total.toLocaleString();
+    }
+
+    // 設置自動存檔與即時計算
+    function setupAutoSave() {
+      editableIds.forEach(id => {
+        const element = document.getElementById(id);
+        element.addEventListener('input', () => {
+          localStorage.setItem('tb_proposal_' + id, element.innerText);
+          if (bValueIds.includes(id)) {
+            calculateTotal();
+          }
+        });
+      });
+    }
+
+    // 一鍵複製
+    function copyText() {
+      const title = document.getElementById('proj_title').innerText;
+      const sub = document.getElementById('proj_sub').innerText;
+      const team = document.getElementById('meta_team').innerText;
+      const members = document.getElementById('meta_members').innerText;
+      const budget = document.getElementById('meta_budget').innerText;
+      const total = document.getElementById('b_total').innerText;
+
+      const output = 
+`【第 3 桌公民審議提案競賽】
+提案名稱：${title} - ${sub}
+申請單位：${team}
+參與名單：${members}
+計畫總額：NT$ ${total} 元 (${budget})
+
+📌 我們想解決的部落痛點：
+  - 1. ${document.getElementById('pain1_t').innerText}：${document.getElementById('pain1_d').innerText}
+  - 2. ${document.getElementById('pain2_t').innerText}：${document.getElementById('pain2_d').innerText}
+
+🚀 行動三大步驟：
+  - STEP 1：${document.getElementById('step1_t').innerText}：${document.getElementById('step1_d').innerText}
+  - STEP 2：${document.getElementById('step2_t').innerText}：${document.getElementById('step2_d').innerText}
+  - STEP 3：${document.getElementById('step3_t').innerText}：${document.getElementById('step3_d').innerText}
+
+🎪 成果展超吸睛亮點：
+  - [關卡1] ${document.getElementById('q1_t').innerText}：${document.getElementById('q1_d').innerText}
+  - [關卡2] ${document.getElementById('q2_t').innerText}：${document.getElementById('q2_d').innerText}
+  - [關卡3] ${document.getElementById('q3_t').innerText}：${document.getElementById('q3_d').innerText}
+  - [關卡4] ${document.getElementById('q4_t').innerText}：${document.getElementById('q4_d').innerText}
+  - ${document.getElementById('culminate_desc').innerText}
+
+💰 10萬元預算配置：
+  - ${document.getElementById('b1_n').innerText}：$${document.getElementById('b1_v').innerText} 元
+  - ${document.getElementById('b2_n').innerText}：$${document.getElementById('b2_v').innerText} 元
+  - ${document.getElementById('b3_n').innerText}：$${document.getElementById('b3_v').innerText} 元
+  - ${document.getElementById('b4_n').innerText}：$${document.getElementById('b4_v').innerText} 元
+  - ${document.getElementById('b5_n').innerText}：$${document.getElementById('b5_v').innerText} 元
+  - ${document.getElementById('b6_n').innerText}：$${document.getElementById('b6_v').innerText} 元
+  - ${document.getElementById('b7_n').innerText}：$${document.getElementById('b7_v').innerText} 元
+  - ${document.getElementById('b8_n').innerText}：$${document.getElementById('b8_v').innerText} 元
+  總額：NT$ ${total} 元
+
+🎯 預估效益：
+  - 服務人數：${document.getElementById('imp_p').innerText}
+  - 服務人次：${document.getElementById('imp_t').innerText}
+  - 受惠戶數：${document.getElementById('imp_h').innerText}`;
+
+      navigator.clipboard.writeText(output).then(() => {
+        alert("✅ 提案圖卡文字已複製成功！您可以直接貼到 LINE 中與夥伴分享。");
+      }).catch(err => {
+        alert("複製失敗，請您手動全選文字複製。");
+      });
+    }
+
+    window.onload = function() {
+      loadSavedData();
+      setupAutoSave();
+    };
+  </script>
+
+</body>
+</html>
